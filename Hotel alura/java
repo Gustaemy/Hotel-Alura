@@ -1,0 +1,41 @@
+const reservationForm = document.getElementById('reservation-form');
+
+reservationForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const checkIn = document.getElementById('check-in').value;
+  const checkOut = document.getElementById('check-out').value;
+  const rate = document.getElementById('rate').value;
+  const guestId = document.getElementById('guest-id').value;
+
+  const data = {
+    checkIn,
+    checkOut,
+    rate,
+    guestId,
+  };
+
+  fetch('/api/reservations', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+    .then(data => {
+      // Handle success
+    })
+    .catch(error => {
+      // Handle error
+    });
+});
+const calculatePrice = (checkIn, checkOut, rate) => {
+    const days = (new Date(checkOut) - new Date(checkIn)) / (1000 * 60 * 60 * 24);
+    const price = days * rate;
+    return price;
+  };
+  
+  const price = calculatePrice('2023-06-01', '2023-06-05', 50);
+  console.log(price); // Output: 200
+  

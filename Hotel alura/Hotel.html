@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hotel Reservation System</title>
+    <style>
+      /* Estilos CSS para el diseño de la interfaz de usuario */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 36px;
+      }
+      nav {
+        background-color: #f2f2f2;
+        overflow: hidden;
+      }
+      nav a {
+        display: block;
+        float: left;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      nav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .container {
+        padding: 20px;
+      }
+      form label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      form input {
+        display: block;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 100%;
+      }
+      form button {
+        display: block;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table td, table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      table th {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      table tr:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hotel Reservation System</h1>
+    </header>
+    <nav>
+      <a href="#">Reservations</a>
+      <a href="#">Guests</a>
+    </nav>
+    <div class="container">
+      <h2>Reservations</h2>
+      <form>
+        <label for="check-in">Check-in date:</label>
+        <input type="date" id="check-in" name="check-in" required>
+        <label for="check-out">Check-out date:</label>
+        <input type="date" id="check-out" name="check-out" required>
+        <label for="rate">Rate per day:</label>
+        <input type="number" id="rate" name="rate" required>
+        <button type="submit">Create Reservation</button>
+      </form>
+      <h2>Current Reservations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Check-in date</th>
+            <th>Check-out date</th>
+            <th>Rate per day</th>
+            <th>Total price
+            </th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2023-06-01</td>
+            <td>2023-06-05</td>
+            <td>50</td>
+            <td>200</td>
+            <td>
+              <button>Edit</button>
+              <button>Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2023-06-05</td>
+            <td>2023-06-09</td>
+            <td>60</td>
+            <td>240</td>
+            <td>
+              <button>Edit</button>
+              <button>Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Guests</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Create Guest</button>
+      </form>
+      <h2>Current Guests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john.doe@example.com</td>
+            <td>
+              <button>Edit</button>
+              <button>Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane.smith@example.com</td>
+            <td>
+              <button>Edit</button>
+              <button>Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
